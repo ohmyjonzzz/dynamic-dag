@@ -1,0 +1,5 @@
+discount_type,discount_type_id
+Medium,1
+High,2
+Low,3
+No Discount,4

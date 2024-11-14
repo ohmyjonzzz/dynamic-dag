@@ -1,0 +1,18 @@
+# Terraform
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+variables.tf
+
+# Environment variables and JSON
+*.env
+*.json
+
+# Python
+__pycache__
+
+# Airflow
+logs/
+
+# Postgres
+*postgres_data/

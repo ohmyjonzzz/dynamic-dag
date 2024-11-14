@@ -1,0 +1,26 @@
+services:
+    pgdatabase:
+        image: postgres:14
+        env_file:
+            - .env
+        volumes:
+            - "./financial_postgres_data:/var/lib/postgresql/data:rw"
+        ports:
+            - "5432:5432"
+        networks:
+            - dynamic_dag
+
+    pgadmin:
+        image: dpage/pgadmin4
+        env_file:
+            - .env
+        ports:
+            - "5050:80"
+        depends_on:
+            - pgdatabase
+        networks:
+            - dynamic_dag
+
+networks:
+    dynamic_dag:
+        external: true
